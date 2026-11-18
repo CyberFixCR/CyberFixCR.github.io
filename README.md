@@ -2,7 +2,7 @@
 
 Sitio empresarial estático creado con HTML, CSS y JavaScript. No requiere frameworks ni proceso de compilación.
 
-Publicado en GitHub Pages: https://kosnipkiwi245-a11y.github.io/CyberFixCR/
+Publicado en GitHub Pages: https://cyberfixcr.github.io/
 
 ## Archivos
 - `index.html`: estructura y contenido.
@@ -48,7 +48,7 @@ GitHub Pages sirve archivos estáticos. No guardés contraseñas, datos de clien
 1. Creá un proyecto en [Supabase](https://supabase.com/) y guardá de forma privada la contraseña de la base de datos.
 2. En **Project Settings → API**, copiá la **Project URL** y la **publishable key** (o la antigua clave `anon`) en `supabase-config.js`. Esa clave pública se puede usar en el navegador solo porque las políticas RLS restringen el acceso.
 3. En **SQL Editor**, ejecutá una vez el contenido de `supabase-schema.sql`. La tabla `service_requests` tiene RLS: cada usuario solo puede consultar sus propias solicitudes; las cuentas de clientes no pueden cambiar estados ni borrar filas.
-4. En **Authentication → URL Configuration**, configurá **Site URL** con la URL publicada y agregá a **Redirect URLs** `https://kosnipkiwi245-a11y.github.io/CyberFixCR/portal.html`. Para pruebas locales, agregá también `http://127.0.0.1:4175/portal.html`.
+4. En **Authentication → URL Configuration**, configurá **Site URL** como `https://cyberfixcr.github.io/` y agregá a **Redirect URLs** `https://cyberfixcr.github.io/portal.html`. Para pruebas locales, agregá también `http://127.0.0.1:4175/portal.html`.
 5. Mantené habilitada la confirmación de correo y configurá un proveedor SMTP propio antes de abrir el registro al público; el envío predeterminado de prueba de Supabase tiene límites.
 6. Probá registro, confirmación por correo, inicio de sesión, recuperación de contraseña y envío/lectura de solicitudes en el sitio publicado con HTTPS.
 7. Para actualizar un estado, iniciá sesión en el panel de Supabase con una cuenta administrativa y editá solo la fila correcta en **Table Editor → service_requests**. Nunca pongás la clave `service_role` en archivos web: permite saltarse RLS.
