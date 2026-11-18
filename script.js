@@ -2,6 +2,27 @@ const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.nav-link');
 
+const brandIntro=document.getElementById('brand-intro');
+if(brandIntro){
+  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const skipButton=brandIntro.querySelector('.brand-intro-skip');
+  let dismissed=false;
+  const dismissIntro=()=>{
+    if(dismissed)return;
+    dismissed=true;
+    window.clearTimeout(introTimer);
+    document.removeEventListener('keydown',handleIntroKeydown);
+    brandIntro.classList.add('is-leaving');
+    window.setTimeout(()=>brandIntro.remove(),reducedMotion?30:500);
+  };
+  const handleIntroKeydown=event=>{
+    if(event.key==='Escape')dismissIntro();
+  };
+  const introTimer=window.setTimeout(dismissIntro,reducedMotion?700:2600);
+  skipButton.addEventListener('click',dismissIntro);
+  document.addEventListener('keydown',handleIntroKeydown);
+}
+
 function closeMenu(){
   nav.classList.remove('open');
   menuButton.setAttribute('aria-expanded','false');
