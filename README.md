@@ -35,7 +35,7 @@ En el administrador DNS de tu dominio, configurá el registro CNAME para `www` a
 Activá **Enforce HTTPS** cuando GitHub lo habilite. No cambies los nameservers ni borres registros de correo existentes sin revisar antes su uso.
 
 ## Antes de publicar comercialmente
-- Reemplazá los textos de contacto pendientes con correo y WhatsApp reales.
+- Verificá que el correo de contacto publicado reciba consultas; todavía no hay WhatsApp configurado.
 - El formulario de contacto principal todavía es una demostración. El portal de clientes requiere completar la configuración de Supabase que sigue.
 - Revisá los textos legales con asesoría adecuada para Costa Rica.
 - Ajustá el catálogo para ofrecer únicamente servicios que realmente podás prestar con tu preparación, herramientas y autorización del cliente.
