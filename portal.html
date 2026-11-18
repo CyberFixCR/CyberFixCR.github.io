@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071321">
+  <meta name="description" content="Accedé a tu espacio de cliente CyberFixCR para enviar consultas y revisar su estado.">
+  <title>Mi cuenta | CyberFixCR</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-page">
+  <a class="skip-link" href="#portal-main">Saltar al contenido</a>
+  <div class="topline"><span class="pulse"></span> ESPACIO DE CLIENTES · CYBERFIXCR</div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="CyberFixCR, inicio">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 34 8v10c0 9-5.8 15-14 19C11.8 33 6 27 6 18V8l14-5Z"/><path d="m13 20 5 5 10-11"/></svg></span>
+        <span>CYBER<span class="accent">FIX</span><small>CR</small></span>
+      </a>
+      <a class="nav-link" href="index.html">Volver al sitio <span>↗</span></a>
+    </div>
+  </header>
+
+  <main id="portal-main" class="portal-main">
+    <div class="container portal-container">
+      <div class="portal-heading">
+        <div class="eyebrow"><span class="eyebrow-line"></span> TU ESPACIO SEGURO</div>
+        <h1>Tu cuenta <span class="gradient-text">CyberFixCR.</span></h1>
+        <p>Creá una cuenta para enviar consultas y revisar su estado. Nunca compartás contraseñas, códigos de verificación ni información sensible en una solicitud.</p>
+      </div>
+
+      <div class="portal-notice" id="setup-notice" role="status" aria-live="polite">
+        El portal está pendiente de configuración. CyberFixCR todavía no recibe ni guarda solicitudes desde esta página.
+      </div>
+
+      <section class="portal-card auth-card" id="auth-panel" aria-labelledby="auth-title">
+        <div class="portal-card-heading">
+          <div class="eyebrow"><span class="eyebrow-line"></span> ACCESO DE CLIENTES</div>
+          <h2 id="auth-title">Iniciá sesión</h2>
+          <p id="auth-description">Usá tu correo y contraseña para ver tus solicitudes.</p>
+        </div>
+        <form id="auth-form">
+          <label class="portal-label" id="name-field" hidden>Nombre completo
+            <input name="name" autocomplete="name" minlength="2" maxlength="120" placeholder="Tu nombre" disabled>
+          </label>
+          <label class="portal-label">Correo electrónico
+            <input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="nombre@correo.com" disabled>
+          </label>
+          <label class="portal-label">Contraseña
+            <input name="password" type="password" autocomplete="current-password" required minlength="12" maxlength="128" placeholder="Al menos 12 caracteres" disabled>
+          </label>
+          <label class="portal-consent" id="consent-field" hidden>
+            <input name="consent" type="checkbox" disabled>
+            <span>Acepto que CyberFixCR use mi correo para gestionar mi cuenta y responder mis solicitudes. *</span>
+          </label>
+          <button class="btn btn-primary portal-submit" id="auth-submit" type="submit" disabled>Iniciar sesión</button>
+        </form>
+        <div class="auth-actions">
+          <button class="portal-text-button" type="button" id="reset-password" disabled>Olvidé mi contraseña</button>
+          <button class="portal-text-button" type="button" id="toggle-auth" disabled>¿Primera vez? Crear cuenta</button>
+        </div>
+        <p class="portal-status" id="auth-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="portal-card recovery-card" id="recovery-panel" aria-labelledby="recovery-title" hidden>
+        <div class="portal-card-heading">
+          <div class="eyebrow"><span class="eyebrow-line"></span> RECUPERACIÓN DE CUENTA</div>
+          <h2 id="recovery-title">Elegí una contraseña nueva</h2>
+          <p>Usá al menos 12 caracteres y evitá reutilizar contraseñas.</p>
+        </div>
+        <form id="recovery-form">
+          <label class="portal-label">Nueva contraseña
+            <input name="password" type="password" autocomplete="new-password" required minlength="12" maxlength="128" placeholder="Al menos 12 caracteres" disabled>
+          </label>
+          <button class="btn btn-primary portal-submit" type="submit" disabled>Guardar contraseña</button>
+        </form>
+        <p class="portal-status" id="recovery-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="portal-dashboard" id="dashboard" hidden aria-labelledby="dashboard-title">
+        <div class="portal-card dashboard-welcome">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> SESIÓN ACTIVA</div>
+            <h2 id="dashboard-title">Hola, <span id="customer-name">cliente</span></h2>
+            <p id="customer-email"></p>
+          </div>
+          <button class="btn btn-outline" id="sign-out" type="button">Cerrar sesión</button>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="portal-card request-card" aria-labelledby="request-title">
+            <div class="portal-card-heading">
+              <div class="eyebrow"><span class="eyebrow-line"></span> NUEVA CONSULTA</div>
+              <h2 id="request-title">¿En qué podemos ayudarte?</h2>
+              <p>Compartí solo la información necesaria para entender tu solicitud.</p>
+            </div>
+            <form id="request-form">
+              <label class="portal-label">Servicio
+                <select name="service" required disabled>
+                  <option value="">Seleccioná un servicio</option>
+                  <option>Revisión básica de seguridad</option>
+                  <option>Protección de dispositivos</option>
+                  <option>Orientación en redes</option>
+                  <option>Concientización digital</option>
+                  <option>Copias de seguridad</option>
+                  <option>Orientación ante incidentes</option>
+                  <option>Consulta general</option>
+                </select>
+              </label>
+              <label class="portal-label">Descripción breve
+                <textarea name="message" rows="4" minlength="5" maxlength="1200" required placeholder="No incluyas contraseñas, códigos ni datos confidenciales." disabled></textarea>
+              </label>
+              <button class="btn btn-primary portal-submit" type="submit" disabled>Enviar consulta</button>
+            </form>
+            <p class="portal-status" id="request-status" role="status" aria-live="polite"></p>
+          </section>
+
+          <section class="portal-card requests-card" aria-labelledby="requests-title">
+            <div class="portal-card-heading">
+              <div class="eyebrow"><span class="eyebrow-line"></span> SEGUIMIENTO</div>
+              <h2 id="requests-title">Tus solicitudes</h2>
+              <p>Solo vos podés ver las solicitudes de esta cuenta.</p>
+            </div>
+            <div class="request-list" id="request-list" aria-live="polite">
+              <p class="empty-requests">Cargando tus solicitudes…</p>
+            </div>
+            <p class="portal-status" id="requests-status" role="status" aria-live="polite"></p>
+          </section>
+        </div>
+      </section>
+
+      <p class="portal-privacy">La cuenta guarda tu correo y las solicitudes que enviés. Revisá el aviso de <a href="index.html#privacidad">privacidad</a> antes de registrarte. El portal no es un canal de emergencias.</p>
+    </div>
+  </main>
+  <footer class="portal-footer"><div class="container"><span>© <span id="portal-year"></span> CyberFixCR</span><a href="index.html">Volver al sitio principal</a></div></footer>
+  <script src="supabase-config.js"></script>
+  <script type="module" src="portal.js"></script>
+</body>
+</html>
