@@ -32,6 +32,7 @@
 .brand-intro-github{animation-delay:.34s}
 .brand-intro-supabase{animation-delay:.52s}
 .brand-intro-icon{width:30px;height:30px;display:grid;place-items:center}
+.brand-intro-icon img{display:block;width:100%;height:100%;object-fit:contain}
 .brand-intro-icon svg{width:100%;height:100%;fill:none;stroke:#eaf7ff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .brand-intro-supabase .brand-intro-icon svg{fill:#63e4ba;stroke:#63e4ba}
 .brand-intro-amp{color:#56d9ff;font:500 19px 'Space Grotesk',sans-serif;animation:intro-text-in .4s .5s both}

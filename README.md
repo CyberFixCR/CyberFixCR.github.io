@@ -11,6 +11,7 @@ Publicado en GitHub Pages: https://cyberfixcr.github.io/
 - `portal.html`, `portal.css`, `portal.js`: acceso de clientes y seguimiento de solicitudes.
 - `supabase-config.js`: URL y clave publicable del proyecto Supabase (vacías hasta configurarlo).
 - `supabase-schema.sql`: tabla de solicitudes y políticas de acceso por usuario (RLS).
+- `github-invertocat.svg`: símbolo blanco oficial de GitHub, usado en la intro; descargado sin modificar del [paquete de logos](https://brand.github.com/GitHub_Logos.zip).
 - `favicon.svg`: icono de la marca.
 
 ## Probar localmente
